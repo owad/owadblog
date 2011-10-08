@@ -1,0 +1,12 @@
+{% block content %}
+    {% for article in objects %}
+    <div>
+        <h2><a href="{% url comment_create article.id %}">{{ article.title }}</a></h2>
+        <h4>added by {{ article.user }} on {{ article.date_add }}</h4>
+        <div>{{ article.content }}</div>
+    </div>
+    <hr/>
+    {% empty %}
+    <div>no articles</div>
+    {% endfor %}
+{% endblock %}

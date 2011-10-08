@@ -1,0 +1,15 @@
+{% extends 'layout/main.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+        <tr>
+            <td></td>
+            <td><input type="submit" value="save" /></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layout/main.html' %}
+
+{% block content %}
+
+<a href="{% url article_delete article.id %}">delete</a>
+<a href="{% url article_update article.id %}">edit</a>
+
+<h2>{{ article }}</h2>
+<div>
+    {{ article.content }}
+</div>
+<h3>by {{ article.user }}, {{ article.date_add }}</h3>
+<hr/>
+<h3>Your comment</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+        <tr>
+            <td></td>
+            <td><input type="submit" value="add comment" /></td>
+        </tr>
+    </table>
+</form>
+<hr/>
+<h3>Comments</h3>
+{% include 'comment/list_div.html' with comment_list=article.comment_set.all %}
+{% endblock %}

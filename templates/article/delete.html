@@ -1,0 +1,6 @@
+<p>Are you sure you want to delete "{{ object }}"?
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="yes" />
+    <input type="button" value="no" onclick="location.href='{% url comment_create object.id %}'" />
+</form>
