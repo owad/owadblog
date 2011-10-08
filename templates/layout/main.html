@@ -7,14 +7,20 @@
     <body>
         <div id="header">
         {% block header %}
-        
+            {% if user.is_authenticated %}
+                welcome {{ user }} | <a href="{% url accounts_logout %}">logout</a>
+            {% else %}
+                welcome stranger | <a href="{% url accounts_login %}">login</a>
+            {% endif %}
         {% endblock %}
         </div>
         <div id="menu">
         {% block top_menu %}
         <ul>
             <li><a href="{% url article_list %}">articles</a>
+            {% if user.is_authenticated %}
             <li><a href="{% url article_create %}">new article</a></li>
+            {% endif %}
         </ul>
         {% endblock %}
         </div>

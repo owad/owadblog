@@ -55,3 +55,7 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), SITE_ROOT + '/templates'),)
 
 ROOT_URLCONF = 'urls'
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_URL = '/'
