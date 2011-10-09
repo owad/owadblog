@@ -58,4 +58,3 @@ ROOT_URLCONF = 'urls'
 
 LOGIN_REDIRECT_URL = '/'
 
-LOGOUT_URL = '/'
