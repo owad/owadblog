@@ -3,7 +3,7 @@
     <div>
         <h2><a href="{% url comment_create article.id %}">{{ article.title }}</a></h2>
         <h4>added by {{ article.user }} on {{ article.date_add }}</h4>
-        <div>{{ article.content }}</div>
+        <div>{{ article.content|safe }}</div>
     </div>
     <hr/>
     {% empty %}
