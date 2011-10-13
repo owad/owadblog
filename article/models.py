@@ -9,5 +9,8 @@ class Article(models.Model):
 
     user = models.ForeignKey(User)
     
+    class Meta:
+        ordering = ('-date_add',)
+    
     def __unicode__(self):
         return self.title

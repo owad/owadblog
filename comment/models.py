@@ -9,6 +9,9 @@ class Comment(models.Model):
     date_add = models.DateTimeField(auto_now_add=True)
     
     article = models.ForeignKey(Article)
+
+    class Meta:
+        ordering = ('-date_add',)
     
     def __unicode__(self):
         return self.content
