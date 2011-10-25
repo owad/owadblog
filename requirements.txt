@@ -1,0 +1,2 @@
+django-tinymce==1.5.1a2
+wsgiref==0.1.2
